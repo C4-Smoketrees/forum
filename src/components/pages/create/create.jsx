@@ -2,32 +2,18 @@ import React from 'react'
 import Navbar from '../../navbar/navbar'
 import SideDrawer from '../../sideDrawer/sideDrawer'
 import Backdrop from '../../backdrop/backdrop'
-import CreateContent from '../../create/create-content'
+import ReactMarkdown from 'react-markdown'
 
 class Create extends React.Component {
-
-  /**
-   *
-   * @param {{tags,title}}props
-   */
   constructor (props) {
     super(props)
-    let tags = ''
-    let title = ''
-    if (this.props.tags) {
-      tags = this.props.tags
-    }
-    if (this.props.title) {
-      title = this.props.title
-    }
 
     // States
     this.state = {
       navbarOpen: false,
       sideDrawerOpen: false,
-      display: 'none',
-      title,
-      tags
+      input: '',
+      display: 'none'
     }
 
     // Handlers
@@ -41,12 +27,12 @@ class Create extends React.Component {
       this.setState({ sideDrawerOpen: false })
     }
 
-    this.handleTitleInput = (e) => {
-      this.setState({ title: e.target.value })
+    this.handleInputChange = (event) => {
+      this.setState({ input: event.target.value })
     }
 
-    this.handleTagsInput = (e) => {
-      this.setState({ tags: e.target.value })
+    this.handleRenderMarkdown = () => {
+      return (<ReactMarkdown source={this.setState.input} />)
     }
   }
 
@@ -66,38 +52,22 @@ class Create extends React.Component {
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}
         <div className='rendered-values'>
-          <div className='create-thread-container'>
-            <div className='create-title-group create-thread-group'>
-              <div className='create-title-label create-thread-label'>Title</div>
-              <div className='create-title-input-div create-thread-input-div'>
-                <input
-                  className='create-title-input create-thread-input'
-                  placeholder='Title for your post.'
-                  value={this.state.title}
-                  onChange={this.handleTitleInput}
+          <form className='create-input' onSubmit={this.handleRenderMarkdown}>
+            <div className='create-form'>
+              <h5>
+                We recommend using Markdown for best performance
+              </h5>
+              <div>
+                <textarea
+                  className='create-text'
+                  onChange={this.handleInputChange}
+                  type='text'
+                  value={this.state.input}
                 />
               </div>
             </div>
-            <div className='create-tags-group create-thread-group'>
-              <div className='create-tags-label create-thread-label'>Tags</div>
-              <div className='create-tags-input-div create-thread-input-div'>
-                <input
-                  className='create-tags-input create-thread-input'
-                  placeholder='For multiple tags use comma `,` to seperate'
-                  value={this.state.tags}
-                  onChange={this.handleTagsInput}
-                />
-              </div>
-            </div>
-            <div className='create-thread-group create-thread-content-group'>
-              <CreateContent content='' />
-            </div>
-            <div className='create-thread-button-group'>
-              <button className='create-thread-button'>Publish</button>
-              <button className='create-thread-button'>Discard</button>
-              <button className='create-thread-button'>Save</button>
-            </div>
-          </div>
+            <button className='create-btn' onSubmit={this.handleRenderMarkdown}>Submit</button>
+          </form>
         </div>
       </div>
 

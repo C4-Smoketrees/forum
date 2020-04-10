@@ -21,6 +21,20 @@ class Discussion extends React.Component {
       isLoggedIn: false
     }
 
+    this.user = {
+      name: 'Shizuka',
+      descriptionUser: 'FullStackDev',
+      Hash: {
+        number: 1,
+        arrayHash: ['#Dev']
+      },
+      likes: 420,
+      issues: 69,
+      issuesSolved: 0,
+      photo : '',
+      emailId : 'example@gmail.com'
+    }
+
     // Component Lifecycle
     this.componentDidMount = () => {
       setTimeout(() => {
@@ -53,14 +67,14 @@ class Discussion extends React.Component {
     const ret =
       <div className='center' style={{ height: '100%', paddingBottom: '20px' }}>
         <Navbar onToggleClick={this.handleToggleClick} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
+        <SideDrawer show={this.state.sideDrawerOpen} user = {this.user}/>
         {backdrop}
         <div className='render-user'>
           <div className='side-left'>
-            <UserCard />
+            <UserCard name={this.user.name} descriptionUser={this.user.descriptionUser} />
             <Create />
-            <Hashtag />
-            <Activity />
+            <Hashtag numberHash={this.user.Hash.number} arrayHash={this.user.Hash.arrayHash} />
+            <Activity likes={this.user.likes} issues={this.user.issues} issuesSolved={this.user.issuesSolved} />
           </div>
           <div className='side-middle'>
             <Card

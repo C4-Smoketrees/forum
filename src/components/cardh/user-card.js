@@ -1,19 +1,30 @@
 import React from 'react'
 
-const UserCard = (props) => {
-  return (
-    <div className='user-card'>
-      <div className='user-back'>
-        <div className='user-circle' />
+class UserCard extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.user = {
+      name: props.name,
+      descriptionUser: props.descriptionUser
+    }
+  }
+
+  render () {
+    return (
+      <div className='user-card'>
+        <div className='user-back'>
+          <img className='user-circle' />
+        </div>
+        <div className='user-name'>
+          {this.user.name}
+        </div>
+        <div className='user-details-home'>
+          {this.user.descriptionUser}
+        </div>
       </div>
-      <div className='user-name'>
-                Abhijay Kishore
-      </div>
-      <div className='user-details-home'>
-                Losem Ipsum something
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default UserCard

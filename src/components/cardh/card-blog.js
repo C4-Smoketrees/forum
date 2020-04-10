@@ -7,7 +7,7 @@ const card = (props) => { // the props passed herer will contain the rendering t
         <div className='details'>
           <div className='head'>
             <h1>
-                            -sudo dev info
+              -sudo dev info
             </h1>
           </div>
           <div className='head-details'>
@@ -28,7 +28,7 @@ const card = (props) => { // the props passed herer will contain the rendering t
         <div className='details'>
           <div className='head-alt'>
             <h1>
-                            -keRas not found
+              -keRas not found
             </h1>
           </div>
           <div className='head-details-alt'>
@@ -43,7 +43,7 @@ const card = (props) => { // the props passed herer will contain the rendering t
         <div className='details'>
           <div className='head'>
             <h1>
-                            -sudo dev info
+              -sudo dev info
             </h1>
           </div>
           <div className='head-details'>

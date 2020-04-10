@@ -4,31 +4,31 @@ const Activity = (props) => {
   return (
     <div className='activity'>
       <div className='activity-head'>
-                Activity
+        Activity
       </div>
       <div className='activity-div'>
         <div className='activity-detail'>
           <div className='number'>
-                    420
+            {props.likes}
           </div>
           <div className='number-detail'>
-                    LIKED BLOGS
+            LIKED BLOGS
           </div>
         </div>
         <div className='activity-detail'>
           <div className='number'>
-                    69
+            {props.issuesSolved}
           </div>
           <div className='number-detail'>
-                    ISSUES SOLVED
+            ISSUES SOLVED
           </div>
         </div>
         <div className='activity-detail'>
           <div className='number'>
-                    0
+            {props.issues}
           </div>
           <div className='number-detail'>
-                    ISSUES CREATED
+            ISSUES CREATED
           </div>
         </div>
       </div>

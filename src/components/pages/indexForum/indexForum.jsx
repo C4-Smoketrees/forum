@@ -91,7 +91,6 @@ class IndexForum extends React.Component {
           </div>
         </div>
       </div>
-
     return (
       <div>
         {

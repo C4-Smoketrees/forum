@@ -2,6 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+console.log(process.env.NODE_ENV === 'production')
+const templatePath = process.env.NODE_ENV === 'production' ? path.join('src', 'views', 'pages', 'templateP.ejs') : path.join('src', 'views', 'pages', 'template.ejs')
+
 const config = [{
   entry: {
     createBlog: [path.resolve('src', 'components', 'entrypoints', 'create-blog.jsx')],
@@ -60,47 +63,47 @@ const config = [{
     new HtmlWebpackPlugin({
       chunks: ['createBlog'],
       filename: '../../views/pages/create-blog.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['createThread'],
       filename: '../../views/pages/create-thread.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['index'],
       filename: '../../views/pages/index.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['indexForum'],
       filename: '../../views/pages/index-forum.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['login'],
       filename: '../../views/pages/login.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['signUP'],
       filename: '../../views/pages/signup.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['userProfile'],
       filename: '../../views/pages/user-profile.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['indexBlog'],
       filename: '../../views/pages/indexBlog.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     }),
     new HtmlWebpackPlugin({
       chunks: ['searchPage'],
       filename: '../../views/pages/searchPage.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
+      template: templatePath
     })
   ]
 }]

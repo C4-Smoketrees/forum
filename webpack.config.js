@@ -14,8 +14,8 @@ const config = [{
     login: [path.resolve('src', 'components', 'entrypoints', 'login.jsx')],
     signUp: [path.resolve('src', 'components', 'entrypoints', 'sign-up.jsx')],
     userProfile: [path.resolve('src', 'components', 'entrypoints', 'user-profile.jsx')],
-    searchPage: [path.resolve('src', 'components', 'entrypoints', 'search-page.jsx')]
-
+    searchPage: [path.resolve('src', 'components', 'entrypoints', 'search-page.jsx')],
+    indexBlog: [path.resolve('src', 'components', 'entrypoints', 'index-blog.jsx')]
   },
 
   output: {
@@ -96,8 +96,8 @@ const config = [{
       template: templatePath
     }),
     new HtmlWebpackPlugin({
-      chunks: ['indexBlog'],
-      filename: '../../views/pages/indexBlog.ejs',
+      chunks: ['index-blog'],
+      filename: '../../views/pages/index-blog.ejs',
       template: templatePath
     }),
     new HtmlWebpackPlugin({

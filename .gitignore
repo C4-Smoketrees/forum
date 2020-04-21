@@ -1,6 +1,7 @@
 src/static/public/js/
 src/static/public/css/
 src/static/views/
+build/
 # Logs
 logs
 *.log

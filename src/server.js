@@ -22,11 +22,9 @@ app.use('/', require('./routes/index'))
 app.use('/user', require('./routes/user-profile'))
 app.use('/signup', require('./routes/sign-up'))
 app.use('/createThread', require('./routes/create-thread'))
-app.use('/createBlog', require('./routes/create-blog'))
 app.use('/indexForum', require('./routes/index-forum'))
 app.use('/postForum', require('./routes/post-forum'))
 app.use('/login', require('./routes/login'))
-app.use('/indexBlog', require('./routes/index-blog'))
 app.use('/searchPage', require('./routes/search-page'))
 
 const port = process.env.PORT || 3000

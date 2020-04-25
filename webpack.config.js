@@ -6,7 +6,6 @@ const templatePath = process.env.NODE_ENV === 'production' ? path.join('src', 'v
 
 const config = [{
   entry: {
-    createBlog: [path.resolve('src', 'components', 'entrypoints', 'create-blog.jsx')],
     createThread: [path.resolve('src', 'components', 'entrypoints', 'create-thread.jsx')],
     index: [path.resolve('src', 'components', 'entrypoints', 'index.jsx')],
     indexForum: [path.resolve('src', 'components', 'entrypoints', 'index-forum.jsx')],
@@ -14,8 +13,7 @@ const config = [{
     signUp: [path.resolve('src', 'components', 'entrypoints', 'sign-up.jsx')],
     userProfile: [path.resolve('src', 'components', 'entrypoints', 'user-profile.jsx')],
     searchPage: [path.resolve('src', 'components', 'entrypoints', 'search-page.jsx')],
-    postForum: [path.resolve('src', 'components', 'entrypoints', 'post-forum.jsx')],
-    indexBlog: [path.resolve('src', 'components', 'entrypoints', 'index-blog.jsx')]
+    postForum: [path.resolve('src', 'components', 'entrypoints', 'post-forum.jsx')]
   },
 
   output: {
@@ -61,11 +59,6 @@ const config = [{
     new CleanWebpackPlugin(),
     // create blog
     new HtmlWebpackPlugin({
-      chunks: ['createBlog'],
-      filename: '../../views/pages/create-blog.ejs',
-      template: templatePath
-    }),
-    new HtmlWebpackPlugin({
       chunks: ['createThread'],
       filename: '../../views/pages/create-thread.ejs',
       template: templatePath
@@ -93,11 +86,6 @@ const config = [{
     new HtmlWebpackPlugin({
       chunks: ['userProfile'],
       filename: '../../views/pages/user-profile.ejs',
-      template: templatePath
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['indexBlog'],
-      filename: '../../views/pages/index-blog.ejs',
       template: templatePath
     }),
     new HtmlWebpackPlugin({

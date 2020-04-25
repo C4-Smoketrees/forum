@@ -7,12 +7,7 @@ const templatePath = process.env.NODE_ENV === 'production' ? path.join('src', 'v
 const config = [{
   entry: {
     createThread: [path.resolve('src', 'components', 'entrypoints', 'create-thread.jsx')],
-    index: [path.resolve('src', 'components', 'entrypoints', 'index.jsx')],
     indexForum: [path.resolve('src', 'components', 'entrypoints', 'index-forum.jsx')],
-    login: [path.resolve('src', 'components', 'entrypoints', 'login.jsx')],
-    signUp: [path.resolve('src', 'components', 'entrypoints', 'sign-up.jsx')],
-    userProfile: [path.resolve('src', 'components', 'entrypoints', 'user-profile.jsx')],
-    searchPage: [path.resolve('src', 'components', 'entrypoints', 'search-page.jsx')],
     postForum: [path.resolve('src', 'components', 'entrypoints', 'post-forum.jsx')]
   },
 
@@ -64,34 +59,9 @@ const config = [{
       template: templatePath
     }),
     new HtmlWebpackPlugin({
-      chunks: ['index'],
-      filename: '../../views/pages/index.ejs',
-      template: templatePath
-    }),
-    new HtmlWebpackPlugin({
       chunks: ['indexForum'],
       filename: '../../views/pages/index-forum.ejs',
       template: templatePath
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['login'],
-      filename: '../../views/pages/login.ejs',
-      template: templatePath
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['signUP'],
-      filename: '../../views/pages/signup.ejs',
-      template: templatePath
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['userProfile'],
-      filename: '../../views/pages/user-profile.ejs',
-      template: templatePath
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['searchPage'],
-      filename: '../../views/pages/searchPage.ejs',
-      template: path.join('src', 'views', 'pages', 'template.ejs')
     }),
     new HtmlWebpackPlugin({
       chunks: ['postForum'],

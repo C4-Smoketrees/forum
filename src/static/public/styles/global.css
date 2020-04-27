@@ -2827,7 +2827,6 @@ button {
   }
   
   .post-forum-reply-button{
-	margin-top: 15px;
 	padding: 5px 10px;
     cursor: pointer;
     width: 92px;
@@ -3483,4 +3482,38 @@ button {
     .c4-second-blog-left{
         width: 100%;
     }
+}
+
+.report-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: fit-content;
+    background-color: whitesmoke;
+    z-index: 101;
+}
+
+.report-box input{
+    position: relative;
+    width: 80%;
+    border: 1px solid var(--main-color);
+    margin: 0.5rem auto;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+@media(max-width: 425px){
+    .report-box{
+        width: 350px;
+    }
+
+}
+
+@media(max-width: 350px){
+    .report-box{
+        width: 300px;
+    }
+
 }

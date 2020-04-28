@@ -23,7 +23,7 @@ class ReportBox extends React.Component {
       <div className='report-box'>
         <input value={this.state.reasonText} onChange={this.handleText} style={{ height: '56px' }} />
         <input value={this.state.descriptionText} onChange={this.handleText} style={{ height: '250px' }} />
-        <button className='post-forum-reply-button' style={{marginTop: '0.5rem auto'}}>Report</button>
+        <button className='post-forum-reply-button' style={{ marginTop: '0.5rem auto' }}>Report</button>
       </div>
     )
   }

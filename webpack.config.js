@@ -8,7 +8,8 @@ const config = [{
   entry: {
     createThread: [path.resolve('src', 'components', 'entrypoints', 'create-thread.jsx')],
     indexForum: [path.resolve('src', 'components', 'entrypoints', 'index-forum.jsx')],
-    postForum: [path.resolve('src', 'components', 'entrypoints', 'post-forum.jsx')]
+    postForum: [path.resolve('src', 'components', 'entrypoints', 'post-forum.jsx')],
+    error: [path.resolve('src', 'components', 'entrypoints', 'error.jsx')]
   },
 
   output: {
@@ -53,6 +54,11 @@ const config = [{
   plugins: [
     new CleanWebpackPlugin(),
     // create blog
+    new HtmlWebpackPlugin({
+      chunks: ['error'],
+      filename: '../../views/pages/error.ejs',
+      template: templatePath
+    }),
     new HtmlWebpackPlugin({
       chunks: ['createThread'],
       filename: '../../views/pages/create-thread.ejs',

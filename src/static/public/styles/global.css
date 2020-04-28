@@ -3508,12 +3508,31 @@ button {
     .report-box{
         width: 350px;
     }
-
 }
 
 @media(max-width: 350px){
     .report-box{
         width: 300px;
     }
+}
 
+.error{
+    width: fit-content;
+    margin: 100px auto;
+}
+
+.error img{
+    width: 500px;
+}
+
+@media(max-width: 425px){
+    .error img{
+        width: 400px;
+    }
+}
+
+@media(max-width: 400px){
+    .error img{
+        width: 300px;
+    }
 }

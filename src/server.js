@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'static', 'public')))
 app.use('/createThread', require('./routes/create-thread'))
 app.use('/indexForum', require('./routes/index-forum'))
 app.use('/postForum', require('./routes/post-forum'))
+app.use('/error', require('./routes/error'))
 
 const port = process.env.PORT || 3000
 
